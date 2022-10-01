@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ef8d4ac502bd844952507c3c075356, type: 3}
+  m_Name: all.atls
+  m_EditorClassIdentifier: 
+  textures:
+  - {fileID: 2800000, guid: 5790f6f6df85d5345b5878c07c05b349, type: 3}
+  makeClipAnimations: 1
+  makeController: 1
+  cells:
+  - name: board
+    x: 45
+    y: 4
+    w: 16
+    h: 10
+    oX: 8
+    oY: 5
+  - name: knife
+    x: 64
+    y: 3
+    w: 4
+    h: 12
+    oX: -1
+    oY: 6
+  - name: back
+    x: 111
+    y: 1
+    w: 14
+    h: 25
+    oX: 7
+    oY: 23
+  - name: front
+    x: 127
+    y: 1
+    w: 13
+    h: 25
+    oX: 7
+    oY: 23
+  - name: side
+    x: 143
+    y: 1
+    w: 11
+    h: 25
+    oX: 7
+    oY: 23
+  - name: cutlet1
+    x: 49
+    y: 19
+    w: 9
+    h: 8
+    oX: 4
+    oY: 6
+  - name: cutlet2
+    x: 62
+    y: 19
+    w: 12
+    h: 8
+    oX: 6
+    oY: 6
+  - name: cut1
+    x: 73
+    y: 2
+    w: 5
+    h: 13
+    oX: -2
+    oY: 12
+  - name: cut2
+    x: 79
+    y: 3
+    w: 8
+    h: 12
+    oX: 4
+    oY: 10
+  - name: pan1
+    x: 64
+    y: 41
+    w: 16
+    h: 7
+    oX: 10
+    oY: 6
+  - name: pan2
+    x: 65
+    y: 49
+    w: 16
+    h: 7
+    oX: 11
+    oY: 6
+  - name: pan3
+    x: 83
+    y: 38
+    w: 13
+    h: 10
+    oX: 9
+    oY: 9
+  - name: mat
+    x: 1
+    y: 67
+    w: 30
+    h: 24
+    oX: 15
+    oY: 12
+  - name: pan
+    x: 64
+    y: 67
+    w: 15
+    h: 7
+    oX: 10
+    oY: 6
+  - name: stove
+    x: 62
+    y: 79
+    w: 18
+    h: 12
+    oX: 10
+    oY: 6
+  - name: panlet1
+    x: 52
+    y: 35
+    w: 9
+    h: 7
+    oX: 4
+    oY: 9
+  - name: panlet2
+    x: 53
+    y: 44
+    w: 8
+    h: 8
+    oX: 4
+    oY: 10
+  - name: panlet3
+    x: 52
+    y: 53
+    w: 9
+    h: 9
+    oX: 6
+    oY: 13
+  clips:
+  - name: cutlet
+    repeat: 1
+    speed: 0.25
+    frames: 05000000010000000600000001000000
+  - name: cut
+    repeat: 1
+    speed: 0.25
+    frames: 07000000010000000800000001000000
+  - name: pan
+    repeat: 1
+    speed: 0.25
+    frames: 09000000010000000a0000000100000009000000010000000b000000010000000a00000001000000
+  - name: panlet
+    repeat: 1
+    speed: 0.25
+    frames: 0f0000000100000010000000010000000f0000000100000011000000010000001000000001000000
+  width: 512
+  height: 512

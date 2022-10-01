@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: UI
+    uniqueID: 2183451511
+    locked: 0
+  - name: Curtain
+    uniqueID: 1020316171
+    locked: 0

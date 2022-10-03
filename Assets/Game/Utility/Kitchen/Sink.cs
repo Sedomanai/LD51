@@ -15,7 +15,8 @@ namespace Elang
             return item != null; 
         }
 
-        public new bool TryInsertingItem(IItem item, out bool stopMoving) { 
+        public new bool TryInsertingItem(ref IItem item, out bool stopMoving) {
+            SoundMgr.Instance.PlaySFX("pan");
             stopMoving = true; 
             return true; 
         }

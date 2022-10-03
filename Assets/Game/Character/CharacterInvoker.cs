@@ -28,21 +28,22 @@ namespace Elang
             int cost = 0;
             foreach (var chef in _chefs) {
                 chef.On10Seconds(_translator);
-                cost += 5;
+                cost += 2;
             }
             foreach (var waiter in _waiters) {
-                cost += 3;
+                cost += 1;
             }
-            cost += 10;
+            cost += 2;
 
             _gold.AddValue(-cost);
 
             if (_gold.Value < 0) {
                 _gold.SetValue(0);
-
-                // GAME OVER
                 var game = _translator.GetComponent<Game>();
                 game.ChangeState(Game.State.GameOver);
+            } else if (_gold.Value >= 300) {
+                var game = _translator.GetComponent<Game>();
+                game.ChangeState(Game.State.Finished);
             }
         }
 

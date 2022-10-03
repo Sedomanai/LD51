@@ -18,6 +18,7 @@ namespace Elang
 
         public new IItem TryGetItem {  
             get {
+                SoundMgr.Instance.PlaySFX("sinklet");
                 return _customers; 
             }  
         }

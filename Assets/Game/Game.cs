@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
 
 namespace Elang
@@ -15,7 +16,8 @@ namespace Elang
             Chef,
             Waiter,
             Reel,
-            GameOver
+            GameOver,
+            Finished
         }
 
         [Header("UI")]
@@ -23,6 +25,8 @@ namespace Elang
         GameArrows _arrows;
         [SerializeField]
         GameObject _gameOverScreen;
+        [SerializeField]
+        GameObject _youWinScreen;
 
         [Header("Input")]
         [SerializeField]
@@ -65,6 +69,9 @@ namespace Elang
             ChangeState(_state);
 
             _translator = GetComponent<ItemTranslator>();
+
+            SoundMgr.Instance.PlayBGM("untitled");
+            SoundMgr.Instance.sfxMax = 500;
         }
 
         void OnDestroy() {
@@ -75,6 +82,12 @@ namespace Elang
             _trySelect = true;
         }
 
+        public void StartGame() {
+            ChangeState(State.Basic);
+            SoundMgr.Instance.PlaySFX("start");
+        }
+
+        bool _winFanfare = false;
         public void ChangeState(State state) {
             _prevState = _state;
             _selectReel = _selectCharacter = _selectKitchen = _selectDining = false;
@@ -97,6 +110,16 @@ namespace Elang
                 _activePlayer = null;
                 _gameOverScreen.SetActive(true);
                 _timer.StopTime();
+                StartCoroutine(RestartCO());
+                break;
+            case State.Finished:
+                _activePlayer = null;
+                _youWinScreen.SetActive(true);
+                _timer.StopTime();
+                if (!_winFanfare) {
+                    SoundMgr.Instance.PlaySFX("win");
+                    _winFanfare = true;
+                }
                 break;
             }
             _trySelect = false;
@@ -109,9 +132,24 @@ namespace Elang
             Select(_selectKitchen, _kitchenLayer);
             Select(_selectDining, _diningLayer);
             ReelSelect();
+            RestartClick();
 
             _arrows.ProcessState(_state);
             _trySelect = false;
+        }
+
+        IEnumerator RestartCO() {
+            SoundMgr.Instance.PlaySFX("gameover");
+            yield return new WaitForSeconds(2.5f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        void RestartClick() {
+            if (_state == State.Finished) {
+                if (_trySelect) {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
+            }
         }
 
         void CharacterSelect() {
@@ -125,12 +163,14 @@ namespace Elang
                             _activePlayer = chef;
                             _arrows.ActivateSmallArrow(_activePlayer.SpriteTransform);
                             ChangeState(State.Chef);
+                            SoundMgr.Instance.PlaySFX("char");
                         } else {
                             var waiter = curr.GetComponent<Waiter>();
                             if (waiter) {
                                 _activePlayer = waiter;
                                 _arrows.ActivateSmallArrow(_activePlayer.SpriteTransform);
                                 ChangeState(State.Waiter);
+                                SoundMgr.Instance.PlaySFX("char");
                             }
                         }
                     }
@@ -155,9 +195,10 @@ namespace Elang
         void ProcessCardAction(GameObject target) {
             _reel.Highlight(target);
             if (_trySelect) {
-                var spr = target.GetComponentsInChildren<SpriteRenderer>()[1];
-                var item = _translator.cardToItem[spr.sprite];
                 if (_activePlayer != null) {
+                    SoundMgr.Instance.PlaySFX("getitem");
+                    var spr = target.GetComponentsInChildren<SpriteRenderer>()[1];
+                    var item = _translator.cardToItem[spr.sprite];
                     _activePlayer.Item = item;
                 }
 

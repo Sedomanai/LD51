@@ -27,6 +27,7 @@ namespace Elang
 
         public new IItem TryGetItem {
             get {
+                SoundMgr.Instance.PlaySFX("tray");
                 var item = _item;
                 _item = null;
                 _rend.sprite = null;
@@ -34,12 +35,13 @@ namespace Elang
             }
         }
 
-        public new bool TryInsertingItem(IItem item, out bool stopAction) {
+        public new bool TryInsertingItem(ref IItem item, out bool stopAction) {
             stopAction = false;
             if (item != null && _item == null) {
                 if (item.Index > (int)SpecialItems.Begin)
                     return false;
 
+                SoundMgr.Instance.PlaySFX("tray");
                 _item = item;
                 _rend.sprite = item.IRL;
                 return true;

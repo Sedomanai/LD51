@@ -15,7 +15,8 @@ namespace Elang
         public bool Processable(IItem item, out bool ignoreDupe);
         public int UpdateCustomerState(ItemTranslator translator, ReelData menu);
         public Item TryCookingItem(ItemTranslator translator);
-        public bool TryInsertingItem(IItem item, out bool stopMoving);
+        public bool TryInsertingItem(ref IItem item, out bool stopMoving);
+        public IItem TryMixItem(IItem item);
         public bool TrySetColor(Color color);
     }
 
@@ -43,8 +44,8 @@ namespace Elang
         public Item TryCookingItem(ItemTranslator translator) { return null; }
         public int UpdateCustomerState(ItemTranslator translator, ReelData menu) { return 0; }
 
-        public bool TryInsertingItem(IItem item, out bool stopMoving) { stopMoving = false; return false; }
-
+        public bool TryInsertingItem(ref IItem item, out bool stopMoving) { stopMoving = false; return false; }
+        public IItem TryMixItem(IItem item) { return null; }
         public bool TrySetColor(Color color) { return false; }
 
 

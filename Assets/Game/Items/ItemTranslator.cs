@@ -10,10 +10,15 @@ namespace Elang
         Sprite IRL { get; set; }
         bool PanFriable { get; }
         bool Choppable { get; }
+        bool Preparable { get; }
         Color Tint { get; set; }
         int Index { get; set; }
 
+        int Cost { get; set; }
+
         public Sprite PanFried { get; }
+        public Sprite Chopped { get; }
+        public Sprite Prepared { get; }
     }
 
     public abstract class ItemBase : IItem
@@ -24,12 +29,16 @@ namespace Elang
         public bool PanFriable { get { return false; } }
 
         public bool Choppable { get { return false; } }
+        public bool Preparable { get { return false; } }
 
         public Color Tint { get; set; }
         public int Index { get; set; }
 
+        public int Cost { get { return 0; } set { } }
+
         public Sprite PanFried { get { return null; } }
         public Sprite Chopped { get { return null; } }
+        public Sprite Prepared { get { return null; } }
     }
 
     [System.Serializable]
@@ -40,11 +49,17 @@ namespace Elang
         [SerializeField]
         Sprite _panFried = null;
         [SerializeField]
-        bool _choppable = false;
+        Sprite _chopped = null;
+        [SerializeField]
+        Sprite _prepared = null;
+        [SerializeField]
+        int _cost = 25;
         [SerializeField]
         Color _tint;
         public Sprite PanFried { get { return _panFried; } }
-
+        public Sprite Chopped { get { return _chopped; } }
+        public Sprite Prepared { get { return _prepared; } }
+        public int Cost { get { return _cost; } set { } }
         public Sprite Card { get { return _card; } set { _card = value; } }
         public Sprite IRL {
             get { return _irl; }
@@ -54,7 +69,10 @@ namespace Elang
             get { return _panFried != null; }
         }
         public bool Choppable {
-            get { return _choppable; }
+            get { return _chopped != null; }
+        }
+        public bool Preparable {
+            get { return _prepared != null; }
         }
         public Color Tint {
             get { return _tint; }

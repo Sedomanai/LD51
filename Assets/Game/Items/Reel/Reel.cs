@@ -11,9 +11,6 @@ namespace Elang
         ObjectPool _cardPool;
         List<GameObject> _cards = new();
 
-        [SerializeField]
-        bool _vertical = false;
-
         [Header("Materials")]
         [SerializeField]
         Material _selected;

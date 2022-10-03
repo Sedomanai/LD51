@@ -59,7 +59,7 @@ namespace Elang
             _item = translator.nameToItem["dish"];
             _plate.sprite = _item.IRL;
             IsOpen = false;
-            return 10;
+            return 25;
         }
 
         public void Clean() {

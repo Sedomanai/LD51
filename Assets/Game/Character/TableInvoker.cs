@@ -30,9 +30,5 @@ namespace Elang
                 cost += table.UpdateCustomerState(_translator, _menu);
             } _gold.AddValue(cost);
         }
-
-        //public void BuyChef() {
-        //    _chefs.Add(_pool.Get().GetComponent<Chef>());
-        //}
     }
 }

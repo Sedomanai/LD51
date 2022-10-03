@@ -29,10 +29,11 @@ namespace Elang
 
             return translator.nameToItem["trash"];
         }
-        public new bool TryInsertingItem(IItem item, out bool stopMoving) { 
+        public new bool TryInsertingItem(ref IItem item, out bool stopMoving) { 
             if (item.PanFriable) {
                 _item = item;
                 stopMoving = true;
+                SoundMgr.Instance.PlaySFX("pan");
                 return true;
             }
 

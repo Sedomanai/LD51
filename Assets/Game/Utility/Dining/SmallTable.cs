@@ -52,12 +52,16 @@ namespace Elang
         State _state = State.None;
         Chair[] _chairs;
 
+        SpriteRenderer _eat;
+
         CustomerItem _customer;
 
         int _eatTime = 2;
 
         void Awake() {
             _chairs = GetComponentsInChildren<Chair>();
+            _eat = GetComponentInChildren<OneAnimation>().GetComponent<SpriteRenderer>();
+            _eat.enabled = false;
         }
 
         Chair DeliverableChair(IItem item) {
@@ -89,11 +93,15 @@ namespace Elang
                     if (allClear)
                         _state = State.None;
                 }
+                if (ret != null)
+                    SoundMgr.Instance.PlaySFX("getitem");
+
                 return ret; 
             } 
         }
 
-        public new bool TryInsertingItem(IItem item, out bool nullItem) {
+        public new bool TryInsertingItem(ref IItem item, out bool nullItem) {
+            bool ret = false;
             nullItem = false;
             switch (_state) {
             case State.None:
@@ -101,19 +109,24 @@ namespace Elang
                 if (customer != null && customer.NumCount < 3) {
                     _customer = customer;
                     SeatCustomers();
-                    return true;
+                    SoundMgr.Instance.PlaySFX("seat");
+                    ret = true;
                 }
                 break;
             case State.Ordering:
                 DeliverableChair(item).GiveItem();
-                if (CheckAllDelivered())
-                    _state = State.Eating;
+                if (CheckAllDelivered()) { 
+                    _state = State.Eating; 
+                    _eat.enabled = true;
+                }
 
+                SoundMgr.Instance.PlaySFX("tray");
                 nullItem = false;
-                return true;
+                ret = true;
+                break;
             }
 
-            return false;
+            return ret;
         }
 
         public bool CheckAllDelivered() {
@@ -139,7 +152,7 @@ namespace Elang
             case State.Seated:
                 foreach (var chair in _chairs) {
                     var sprites = menu.sprites;
-                    var index = Random.Range(0, sprites.Count - 1);
+                    var index = Random.Range(0, sprites.Count);
                     var item = translator.irlToItem[sprites[index]];
                     chair.AskItem(item);
                 }
@@ -151,6 +164,7 @@ namespace Elang
                     if (_eatTime == 0) {
                         int cost = 0;
                         foreach (var chair in _chairs) {
+                            _eat.enabled = false;
                             cost += chair.Close(translator);
                         }
 

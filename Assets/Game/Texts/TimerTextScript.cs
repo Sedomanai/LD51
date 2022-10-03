@@ -1,3 +1,4 @@
+using Elang;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -37,12 +38,14 @@ public class TimerTextScript : MonoBehaviour
             if (_time < 0.0f) {
                 _time += _beginTime;
                 OnTimeHit.Invoke();
+                SoundMgr.Instance.PlaySFX("buy");
             }
             ConvertTimeToText();
 
             if (_debug.action.triggered) {
                 ResetTime();
                 OnTimeHit.Invoke();
+                SoundMgr.Instance.PlaySFX("buy");
             }
         }
     }

@@ -65,11 +65,18 @@ namespace Elang
             }
 
             bool stopMoving;
-            if (utility.TryInsertingItem(_item, out stopMoving)) {
-                utility.TrySetColor(_item.Tint);
+            if (utility.TryInsertingItem(ref _item, out stopMoving)) {
+                if (_item != null)
+                    utility.TrySetColor(_item.Tint);
                 _itemHolder.sprite = null;
                 if (!stopMoving)
                     _item = null;
+                return Game.State.Basic;
+            }
+
+            var newitem = utility.TryMixItem(_item);
+            if (newitem != null) {
+                Item = newitem;
                 return Game.State.Basic;
             }
 
@@ -119,7 +126,7 @@ namespace Elang
             transform.localPosition = tray.Offset;
 
             bool stopAction;
-            if (tray.TryInsertingItem(_item, out stopAction)) {
+            if (tray.TryInsertingItem(ref _item, out stopAction)) {
                 _item = null;
                 _itemHolder.sprite = null;
                 return;

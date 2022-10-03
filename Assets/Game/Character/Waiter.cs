@@ -27,7 +27,7 @@ namespace Elang
             transform.localPosition = tray.Offset;
 
             bool stopAction;
-            if (tray.TryInsertingItem(_item, out stopAction)) {
+            if (tray.TryInsertingItem(ref _item, out stopAction)) {
                 _item = null;
                 _itemHolder.sprite = null;
                 return;

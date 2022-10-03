@@ -1217,12 +1217,12 @@ TextureImporter:
       name: salad
       rect:
         serializedVersion: 2
-        x: 6
-        y: 387
-        width: 6
-        height: 5
+        x: 1
+        y: 377
+        width: 14
+        height: 12
       alignment: 9
-      pivot: {x: 0.5, y: -1}
+      pivot: {x: 0.5, y: 0.16666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1697,6 +1697,27 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: milk_cup
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 385
+        width: 6
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: -0.22222222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4daf73cb3ed4460800000000000000
+      internalID: 7227683374532056287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: circle4
       rect:
         serializedVersion: 2
@@ -2053,6 +2074,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: eat1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 423
+        width: 10
+        height: 8
+      alignment: 9
+      pivot: {x: 0.8, y: -0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f9594eff24417c0800000000000000
+      internalID: -4101579693808574709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eat2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 423
+        width: 10
+        height: 8
+      alignment: 9
+      pivot: {x: 0.8, y: -0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba8c764522a6a2a0800000000000000
+      internalID: -6726510712451200335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomato_plate
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 406
+        width: 12
+        height: 7
+      alignment: 9
+      pivot: {x: 0.5, y: -0.2857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2a133fc02f490300800000000000000
+      internalID: 218793059237960237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2099,6 +2183,7 @@ TextureImporter:
       stove: -8630261418693341790
       cut1: -1651571586299499155
       tomato: -2381562135814434103
+      eat1: -4101579693808574709
       body_side: -8365570334529427417
       small_arrow4: 7388219278501314589
       tomato_irl: 4744759997772772921
@@ -2107,6 +2192,7 @@ TextureImporter:
       circle4: 581445428786417340
       waiter_front: 730695857610300458
       arrow2: -8308382749757336984
+      tomato_plate: 218793059237960237
       brewer: 2725197975629688745
       mixhand1: 4754449253603196856
       card: 4170399084951674837
@@ -2144,9 +2230,11 @@ TextureImporter:
       circle6: 4379695808090203063
       cabb_irl: -7208782583072337106
       table2: -3551773745164438710
+      eat2: -6726510712451200335
       egg_irl: 7802283683096721082
       panlet1: -5688593791525575297
       arrow4: 8905289455074180067
+      milk_cup: 7227683374532056287
       circle5: 6702539940831606494
       egg: -2109547878569501114
       veggie_box: 8644135109525292980

@@ -13,15 +13,16 @@ namespace Elang
             Paused,
             Basic,
             Chef,
-            Character,
-            Reel
+            Waiter,
+            Reel,
+            GameOver
         }
 
         [Header("UI")]
         [SerializeField]
-        GameObject _arrow;
+        GameArrows _arrows;
         [SerializeField]
-        GameObject _smallArrow, _circlet;
+        GameObject _gameOverScreen;
 
         [Header("Input")]
         [SerializeField]
@@ -35,15 +36,14 @@ namespace Elang
         State _state = State.Basic;
         State _prevState;
 
-        SpriteRenderer _circletRenderer;
-        SpriteRenderer _arrowRenderer;
-        BinaryStateRenderer _binRend;
+        [SerializeField]
+        TimerTextScript _timer;
+
         ICharacter _activePlayer;
 
         bool _trySelect = false;
-        bool _selectCharacter, _selectKitchen, _selectReel;
-
-        int _characterLayer, _kitchenLayer, _reelLayer;
+        bool _selectCharacter, _selectKitchen, _selectDining, _selectReel;
+        int _characterLayer, _kitchenLayer, _diningLayer, _trayLayer, _reelLayer;
         public Vector3 CursorOrigin { get { return Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()); } }
 
         Reel _reel;
@@ -51,17 +51,19 @@ namespace Elang
         ItemTranslator _translator;
 
         void Awake() {
-            _reel = GetComponent<Reel>();
+            _reel = GetComponentInChildren<Reel>();
             _kitchenLayer = 1 << LayerMask.NameToLayer("Kitchen");
+            _diningLayer = 1 << LayerMask.NameToLayer("Dining");
             _characterLayer = 1 << LayerMask.NameToLayer("Player");
             _reelLayer = 1 << LayerMask.NameToLayer("Card");
+            _trayLayer = 1 << LayerMask.NameToLayer("Tray");
+
+            _arrows.Init();
 
             _input.FindActionMap("Play").Enable();
             _selectAction.action.performed += PerformTrySelect;
             ChangeState(_state);
 
-            _circletRenderer = _circlet.GetComponentInChildren<SpriteRenderer>();
-            _arrowRenderer = _arrow.GetComponentInChildren<SpriteRenderer>();
             _translator = GetComponent<ItemTranslator>();
         }
 
@@ -75,33 +77,40 @@ namespace Elang
 
         public void ChangeState(State state) {
             _prevState = _state;
+            _selectReel = _selectCharacter = _selectKitchen = _selectDining = false;
             _state = state;
             switch (_state) {
-            case State.Paused:
-                _selectReel = _selectCharacter = _selectKitchen = false;
-                break;
             case State.Basic:
                 _selectCharacter = true;
-                _selectReel = _selectKitchen = false;
+                _activePlayer = null;
                 break;
             case State.Chef:
                 _selectCharacter = _selectKitchen = true;
-                _selectReel = false;
+                break;
+            case State.Waiter:
+                _selectCharacter = _selectDining = true;
                 break;
             case State.Reel:
                 _selectReel = true;
-                _selectCharacter = _selectKitchen = false;
+                break;
+            case State.GameOver:
+                _activePlayer = null;
+                _gameOverScreen.SetActive(true);
+                _timer.StopTime();
                 break;
             }
+            _trySelect = false;
         }
 
         void Update() {
-            _circletRenderer.enabled = false;
-            _arrowRenderer.enabled = false;
+            _arrows.DisactivateHighlights();
+
             CharacterSelect();
-            KitchenSelect();
+            Select(_selectKitchen, _kitchenLayer);
+            Select(_selectDining, _diningLayer);
             ReelSelect();
 
+            _arrows.ProcessState(_state);
             _trySelect = false;
         }
 
@@ -114,13 +123,20 @@ namespace Elang
                         var chef = curr.GetComponent<Chef>();
                         if (chef) {
                             _activePlayer = chef;
-                            SetSmallArrowActive();
+                            _arrows.ActivateSmallArrow(_activePlayer.SpriteTransform);
                             ChangeState(State.Chef);
+                        } else {
+                            var waiter = curr.GetComponent<Waiter>();
+                            if (waiter) {
+                                _activePlayer = waiter;
+                                _arrows.ActivateSmallArrow(_activePlayer.SpriteTransform);
+                                ChangeState(State.Waiter);
+                            }
                         }
                     }
 
                     if (!(_activePlayer != null && _activePlayer.Equals(curr))) {
-                        SetCircletActive(curr.GetComponentInChildren<SpriteRenderer>().transform);
+                        _arrows.ActivateCirclet(curr.GetComponentInChildren<SpriteRenderer>().transform);
                     }
                 }
             }
@@ -146,55 +162,41 @@ namespace Elang
                 }
 
                 _reel.CloseReel();
-
-                //fridge 
-                //if (_binRend) {
-                //    _binRend.TurnOff();
-                //    _binRend = null;
-                //}
-
                 ChangeState(_prevState);
             }
         }
 
-        void SetCircletActive(Transform parent) {
-            _circletRenderer.enabled = true;
-            _circlet.transform.parent = parent;
-            _circlet.transform.localPosition = Vector3.zero;
-        }
-
-        void SetArrowActive(Transform parent) {
-            _arrowRenderer.enabled = true;
-            _arrow.transform.parent = parent;
-            _arrow.transform.localPosition = Vector3.zero;
-        }
-
-        void SetSmallArrowActive() {
-            _smallArrow.SetActive(true);
-            _smallArrow.transform.parent = _activePlayer.SpriteTransform;
-            _smallArrow.transform.localPosition = Vector3.zero;
-        }
-
-        void KitchenSelect() {
-            if (_selectKitchen) {
-                var hit = Physics2D.Raycast(CursorOrigin, Vector2.zero, 0, _kitchenLayer);
+        void Select(bool flag, int layer) {
+            if (flag) {
+                var hit = Physics2D.Raycast(CursorOrigin, Vector2.zero, 0, layer);
                 if (hit) {
-                    ProcessActivePlayerAction(hit.collider.gameObject);
-                }
+                    var target = hit.collider.gameObject;
+                    var utility = _activePlayer.ProcessUtility(target);
+                    if (utility != null) {
+                        _arrows.ActivateArrow(target.transform);
+                        if (_trySelect) {
+                            var nextState = _activePlayer.ActivateUtility(target, utility, _reel);
+                            ChangeState(nextState);
+                        }
+                    } 
+                } else
+                    ProcessTrays();
             }
         }
 
-        void ProcessActivePlayerAction(GameObject target) {
-            var utility = _activePlayer.ProcessUtility(target);
-            if (utility != null) {
-                SetArrowActive(target.transform);
-                if (_trySelect) {
-                    var nextState = _activePlayer.ActivateUtility(target, utility, _reel);
-                    ChangeState(nextState);
-                        
+        void ProcessTrays() {
+            var hit = Physics2D.Raycast(CursorOrigin, Vector2.zero, 0, _trayLayer);
+            if (hit) {
+                var target = hit.collider.gameObject.GetComponent<Tray>();
+                bool ignoreDupe;
+                if (target && _activePlayer.ProcessTray(target, out ignoreDupe)) {
+                    _arrows.ActivateArrow(target.transform);
+                    if (_trySelect) {
+                        _activePlayer.UseTray(target);
+                        _trySelect = false;
+                    }
                 }
             }
         }
-
     }
 }

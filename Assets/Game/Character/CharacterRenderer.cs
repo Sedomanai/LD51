@@ -5,15 +5,15 @@ using UnityEngine;
 
 namespace Elang
 {
-    public class ChefRenderer : MonoBehaviour
+    public enum FacingDirection
     {
-        public enum Direction
-        {
-            Left,
-            Right,
-            Down,
-            Up
-        }
+        Left,
+        Right,
+        Down,
+        Up
+    }
+    public class CharacterRenderer : MonoBehaviour
+    {
 
         [SerializeField]
         Sprite _upSprite;
@@ -23,42 +23,39 @@ namespace Elang
         Sprite _sideSprite;
 
         [SerializeField]
-        Direction _direction = Direction.Left;
+        FacingDirection _direction = FacingDirection.Left;
 
-        public Direction FacingDirection { get { return _direction; } set { _direction = value; ChangeDirectionLogic(); } }
+        public FacingDirection Direction { get { return _direction; } set { _direction = value; ChangeDirectionLogic(); } }
 
         SpriteRenderer _sprite;
 
-        // Start is called before the first frame update
         void Awake() {
             _sprite = GetComponent<SpriteRenderer>();
+        }
+
+        void OnEnable() {
             ChangeDirectionLogic();
         }
 
         void ChangeDirectionLogic() {
             switch (_direction) {
-            case Direction.Up:
+            case FacingDirection.Up:
                 _sprite.flipX = false;
                 _sprite.sprite = _upSprite;
                 break;
-            case Direction.Down:
+            case FacingDirection.Down:
                 _sprite.flipX = false;
                 _sprite.sprite = _downSprite;
                 break;
-            case Direction.Left:
+            case FacingDirection.Left:
                 _sprite.flipX = true;
                 _sprite.sprite = _sideSprite;
                 break;
-            case Direction.Right:
+            case FacingDirection.Right:
                 _sprite.flipX = false;
                 _sprite.sprite = _sideSprite;
                 break;
             }
-        }
-
-        // Update is called once per frame
-        void Update() {
-
         }
     }
 

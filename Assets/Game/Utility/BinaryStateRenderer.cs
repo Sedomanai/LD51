@@ -12,8 +12,8 @@ namespace Elang
         [SerializeField]
         Sprite _on, _off;
         [SerializeField]
-        Animation _onAnim, _offAnim;
-        int _onHash, _offHash;
+        AnimationClip _onAnim, _offAnim;
+        int _onHash = -1, _offHash = -1;
 
         SpriteRenderer _rend;
         Animator _anim;

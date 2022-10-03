@@ -46,18 +46,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Character"",
+                    ""name"": ""Debug"",
                     ""type"": ""Button"",
-                    ""id"": ""eaebe3a6-34d7-4607-83cd-7ddccbe07ab0"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Kitchen"",
-                    ""type"": ""Button"",
-                    ""id"": ""e3b47d0f-85f4-46b7-9482-9a5331e89ceb"",
+                    ""id"": ""de9c16ac-c77a-4808-bdfc-af38cf5391f8"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -89,23 +80,12 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""407a894a-fe12-4ac1-b2a8-2d7190926613"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""88fe3f3e-5834-4b61-b001-6b64ec02ebe4"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Character"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3ed6e4e6-a644-4a5e-90ef-1a02b0e4a965"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Kitchen"",
+                    ""action"": ""Debug"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -118,8 +98,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Play = asset.FindActionMap("Play", throwIfNotFound: true);
         m_Play_Select = m_Play.FindAction("Select", throwIfNotFound: true);
         m_Play_Cancel = m_Play.FindAction("Cancel", throwIfNotFound: true);
-        m_Play_Character = m_Play.FindAction("Character", throwIfNotFound: true);
-        m_Play_Kitchen = m_Play.FindAction("Kitchen", throwIfNotFound: true);
+        m_Play_Debug = m_Play.FindAction("Debug", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -181,16 +160,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private IPlayActions m_PlayActionsCallbackInterface;
     private readonly InputAction m_Play_Select;
     private readonly InputAction m_Play_Cancel;
-    private readonly InputAction m_Play_Character;
-    private readonly InputAction m_Play_Kitchen;
+    private readonly InputAction m_Play_Debug;
     public struct PlayActions
     {
         private @Controls m_Wrapper;
         public PlayActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Select => m_Wrapper.m_Play_Select;
         public InputAction @Cancel => m_Wrapper.m_Play_Cancel;
-        public InputAction @Character => m_Wrapper.m_Play_Character;
-        public InputAction @Kitchen => m_Wrapper.m_Play_Kitchen;
+        public InputAction @Debug => m_Wrapper.m_Play_Debug;
         public InputActionMap Get() { return m_Wrapper.m_Play; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -206,12 +183,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Cancel.started -= m_Wrapper.m_PlayActionsCallbackInterface.OnCancel;
                 @Cancel.performed -= m_Wrapper.m_PlayActionsCallbackInterface.OnCancel;
                 @Cancel.canceled -= m_Wrapper.m_PlayActionsCallbackInterface.OnCancel;
-                @Character.started -= m_Wrapper.m_PlayActionsCallbackInterface.OnCharacter;
-                @Character.performed -= m_Wrapper.m_PlayActionsCallbackInterface.OnCharacter;
-                @Character.canceled -= m_Wrapper.m_PlayActionsCallbackInterface.OnCharacter;
-                @Kitchen.started -= m_Wrapper.m_PlayActionsCallbackInterface.OnKitchen;
-                @Kitchen.performed -= m_Wrapper.m_PlayActionsCallbackInterface.OnKitchen;
-                @Kitchen.canceled -= m_Wrapper.m_PlayActionsCallbackInterface.OnKitchen;
+                @Debug.started -= m_Wrapper.m_PlayActionsCallbackInterface.OnDebug;
+                @Debug.performed -= m_Wrapper.m_PlayActionsCallbackInterface.OnDebug;
+                @Debug.canceled -= m_Wrapper.m_PlayActionsCallbackInterface.OnDebug;
             }
             m_Wrapper.m_PlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -222,12 +196,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Cancel.started += instance.OnCancel;
                 @Cancel.performed += instance.OnCancel;
                 @Cancel.canceled += instance.OnCancel;
-                @Character.started += instance.OnCharacter;
-                @Character.performed += instance.OnCharacter;
-                @Character.canceled += instance.OnCharacter;
-                @Kitchen.started += instance.OnKitchen;
-                @Kitchen.performed += instance.OnKitchen;
-                @Kitchen.canceled += instance.OnKitchen;
+                @Debug.started += instance.OnDebug;
+                @Debug.performed += instance.OnDebug;
+                @Debug.canceled += instance.OnDebug;
             }
         }
     }
@@ -236,7 +207,6 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     {
         void OnSelect(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
-        void OnCharacter(InputAction.CallbackContext context);
-        void OnKitchen(InputAction.CallbackContext context);
+        void OnDebug(InputAction.CallbackContext context);
     }
 }

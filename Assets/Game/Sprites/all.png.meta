@@ -80,48 +80,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: board
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 498
-        width: 16
-        height: 10
-      alignment: 9
-      pivot: {x: 0.5, y: -0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 858268e62e18b5670800000000000000
-      internalID: 8528553128873044056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: knife
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 497
-        width: 4
-        height: 12
-      alignment: 9
-      pivot: {x: -0.25, y: 0.083333336}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e01eaa453905f9b20800000000000000
-      internalID: 3143319658638795022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: chef_back
       rect:
         serializedVersion: 2
@@ -180,6 +138,384 @@ TextureImporter:
       bones: []
       spriteID: 72560c5e144ea7690800000000000000
       internalID: -7603514049183062745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiter_back
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 486
+        width: 10
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c222165640fd3a8e0800000000000000
+      internalID: -1683256625732705748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiter_front
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 486
+        width: 10
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2c16b7d204f32a00800000000000000
+      internalID: 730695857610300458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: waiter_side
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 486
+        width: 9
+        height: 20
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea7a8ac8b00e52d0800000000000000
+      internalID: -3288189884261827864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: face_back
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 502
+        width: 8
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: -0.8888889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0263e1fc623757e60800000000000000
+      internalID: 7959394526968034848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: face_front
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 502
+        width: 8
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: -0.8888889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a00537a81e84181e0800000000000000
+      internalID: -2197395009652436982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: face_side
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 502
+        width: 8
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: -0.8888889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a931ab80bbe1ffae0800000000000000
+      internalID: -1513457161119067238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hair_back
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 501
+        width: 10
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: -1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2a514a7c1cb3990800000000000000
+      internalID: -7405112099085114653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hair_front
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 503
+        width: 10
+        height: 7
+      alignment: 9
+      pivot: {x: 0.5, y: -1.5714285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2add2ee1f0e88b390800000000000000
+      internalID: -7802330158825546334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hair_side
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 500
+        width: 11
+        height: 10
+      alignment: 9
+      pivot: {x: 0.54545456, y: -0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69565f387117d09e0800000000000000
+      internalID: -1653541142363019882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: body
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 494
+        width: 10
+        height: 7
+      alignment: 9
+      pivot: {x: 0.5, y: -0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261e30ab3e69c3300800000000000000
+      internalID: 233227185538982242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pants
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 489
+        width: 10
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: -0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f347f51ec0901f930800000000000000
+      internalID: 4175128280474547263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shoes
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 484
+        width: 10
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26fecb5808f1cc330800000000000000
+      internalID: 3732392828043325282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: body_side
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 494
+        width: 8
+        height: 7
+      alignment: 9
+      pivot: {x: 0.375, y: -0.42857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 728e3da7a1687eb80800000000000000
+      internalID: -8365570334529427417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pants_side
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 489
+        width: 8
+        height: 4
+      alignment: 9
+      pivot: {x: 0.375, y: -0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b31bc44e632df2c0800000000000000
+      internalID: -4396318704736201805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shoe_side
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 489
+        width: 7
+        height: 4
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f0a1ef23aca10a40800000000000000
+      internalID: 5332733250666340596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mat
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 421
+        width: 30
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaabd1b48b59e68c0800000000000000
+      internalID: -4004098399919031634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: board
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 498
+        width: 16
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: -0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 858268e62e18b5670800000000000000
+      internalID: 8528553128873044056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knife
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 497
+        width: 4
+        height: 12
+      alignment: 9
+      pivot: {x: -0.25, y: 0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e01eaa453905f9b20800000000000000
+      internalID: 3143319658638795022
       vertices: []
       indices: 
       edges: []
@@ -327,27 +663,6 @@ TextureImporter:
       bones: []
       spriteID: 0ed94aa842f869420800000000000000
       internalID: 2636452018979642848
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mat
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 421
-        width: 30
-        height: 24
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eaabd1b48b59e68c0800000000000000
-      internalID: -4004098399919031634
       vertices: []
       indices: 
       edges: []
@@ -548,9 +863,9 @@ TextureImporter:
         x: 160
         y: 448
         width: 16
-        height: 30
+        height: 35
       alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+      pivot: {x: 0.5, y: 0.22857143}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -569,9 +884,9 @@ TextureImporter:
         x: 198
         y: 445
         width: 26
-        height: 33
+        height: 38
       alignment: 9
-      pivot: {x: 0.6923077, y: 0.36363637}
+      pivot: {x: 0.6923077, y: 0.28947368}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -579,6 +894,27 @@ TextureImporter:
       bones: []
       spriteID: c4b5c2a694a9a7100800000000000000
       internalID: 106567181301209932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: veggie_box
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 461
+        width: 21
+        height: 23
+      alignment: 9
+      pivot: {x: 0.52380955, y: 0.04347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b7ccb1651326f770800000000000000
+      internalID: 8644135109525292980
       vertices: []
       indices: 
       edges: []
@@ -747,6 +1083,132 @@ TextureImporter:
       bones: []
       spriteID: 0fe6107c01056a890800000000000000
       internalID: -7447176900822077712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mixbowl
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 400
+        width: 12
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: -0.27272728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fbf58313cefcbbb0800000000000000
+      internalID: -4918776579195798543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mix1
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 397
+        width: 9
+        height: 5
+      alignment: 9
+      pivot: {x: 0.44444445, y: -1.8}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baab8e4e70ed979c0800000000000000
+      internalID: -3928865074417452373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mix2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 397
+        width: 8
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: -2.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c05ead7beb5efb20800000000000000
+      internalID: 3170072254699425989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mixhand1
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 407
+        width: 5
+        height: 9
+      alignment: 9
+      pivot: {x: 0.2, y: -1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bfb3afe7623bf140800000000000000
+      internalID: 4754449253603196856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mixhand2
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 408
+        width: 8
+        height: 8
+      alignment: 9
+      pivot: {x: 0.75, y: -1.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c08fb1a1b291360800000000000000
+      internalID: 7140786075311017055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mixhand3
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 408
+        width: 7
+        height: 8
+      alignment: 9
+      pivot: {x: 0.2857143, y: -1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e00bd78a6562b22d0800000000000000
+      internalID: -3302503748110274546
       vertices: []
       indices: 
       edges: []
@@ -1172,27 +1634,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: egg_irl
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 318
-        width: 14
-        height: 16
-      alignment: 9
-      pivot: {x: 0.5, y: -0.6875}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab67ec7eba7474c60800000000000000
-      internalID: 7802283683096721082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: circle1
       rect:
         serializedVersion: 2
@@ -1340,6 +1781,27 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: egg_irl
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 318
+        width: 14
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab67ec7eba7474c60800000000000000
+      internalID: 7802283683096721082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: card
       rect:
         serializedVersion: 2
@@ -1360,6 +1822,237 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: tomato
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 335
+        width: 10
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c292440bddf2fed0800000000000000
+      internalID: -2381562135814434103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tomato_irl
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 318
+        width: 14
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.21428572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 936bab34416c8d140800000000000000
+      internalID: 4744759997772772921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fried_egg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 365
+        width: 14
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.18181819}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dbbcb9a6675af980800000000000000
+      internalID: -8504388847889761321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trash
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 352
+        width: 14
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15384616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f984b5b9fa76b050800000000000000
+      internalID: 5815971181709527539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: milk_irl
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 335
+        width: 10
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: -0.07692308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19c6cbeaf5931a2b0800000000000000
+      internalID: -5575111780591702895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: milk
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 336
+        width: 11
+        height: 10
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d541b64f61d687e40800000000000000
+      internalID: 5654389277521024093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cabb
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 306
+        width: 10
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97c78ba704c509f20800000000000000
+      internalID: 3427340748435520633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cabb_irl
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 305
+        width: 12
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: -0.07692308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2353f83f6245fb90800000000000000
+      internalID: -7208782583072337106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffee
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 426
+        width: 10
+        height: 12
+      alignment: 9
+      pivot: {x: 0.4, y: -0.083333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bcba8885402f1920800000000000000
+      internalID: 2963122562848701620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thought_left
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 360
+        width: 26
+        height: 28
+      alignment: 9
+      pivot: {x: -0.07692308, y: -0.035714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e98204389a49d4460800000000000000
+      internalID: 7227596432771917982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thought_right
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 361
+        width: 24
+        height: 28
+      alignment: 9
+      pivot: {x: 1.0833334, y: -0.035714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c520514e46c5b600800000000000000
+      internalID: 483510574417716680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1371,67 +2064,100 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fridge1: 5482427156145881213
-      circle1: -2468128796637435866
+      mix1: -3928865074417452373
+      shoe_side: 5332733250666340596
+      mixhand3: -3302503748110274546
       small_arrow5: 7239879415989642258
       chair1: -2704552880007883398
       small_arrow3: -734340805535302558
+      cabb: 3427340748435520633
+      face_side: -1513457161119067238
+      pants_side: -4396318704736201805
       knife: 3143319658638795022
       cutlet1: 3420145722134743641
-      arrow1: 8751792488122390196
-      panlet2: -730942957819197246
-      panlet3: -7963188162635607598
+      face_front: -2197395009652436982
       cup: -7270472902003746264
-      coffee3: -7447176900822077712
-      table1: 1296125551425991600
+      thought_right: 483510574417716680
       cups: -5309410234869032773
+      waiter_back: -1683256625732705748
       small_arrow2: 9024972449214450053
-      arrow6: -3915065105826899531
+      trash: 5815971181709527539
       coffee2: -4180898214496580422
+      face_back: 7959394526968034848
+      hair_back: -7405112099085114653
       receptionist: -4002651452490570997
       dishes: 7805079012179312690
       sink: 1857289232773447772
       arrow3: -2130001004903815583
-      chef_side: -7603514049183062745
-      pot: 5636669753504339508
       rootbear: 7375249994109105876
-      chair2: -5587063009354488333
-      salad: -6281440357103659846
-      sinklet1: -6787469346435372944
+      pot: 5636669753504339508
+      mix2: 3170072254699425989
       cut2: -6874291438910985134
-      pan3: 2636452018979642848
-      pan1: 8482762638095593011
-      ref: 325065918735483595
-      circle6: 4379695808090203063
       cutlet2: 388128680319241902
-      table2: -3551773745164438710
-      egg_irl: 7802283683096721082
+      ref: 325065918735483595
+      thought_left: 7227596432771917982
       stove: -8630261418693341790
       cut1: -1651571586299499155
+      tomato: -2381562135814434103
+      body_side: -8365570334529427417
       small_arrow4: 7388219278501314589
-      panlet1: -5688593791525575297
-      arrow4: 8905289455074180067
+      tomato_irl: 4744759997772772921
       chef_back: -6943103064117242869
       circle3: 4120337333000031763
-      circle5: 6702539940831606494
       circle4: 581445428786417340
+      waiter_front: 730695857610300458
       arrow2: -8308382749757336984
       brewer: 2725197975629688745
-      small_arrow1: -1498369167208775792
-      egg: -2109547878569501114
+      mixhand1: 4754449253603196856
       card: 4170399084951674837
-      mat: -4004098399919031634
-      coffee1: 6371470626893398652
+      small_arrow1: -1498369167208775792
+      waiter_side: -3288189884261827864
+      pants: 4175128280474547263
+      arrow5: -4963279327606943534
       sinklet3: 3174365413302302724
+      mat: -4004098399919031634
       pan2: 3268945518139765531
-      dish: -5947205325045975888
-      circle2: -929303585636652627
+      milk: 5654389277521024093
       fridge2: 106567181301209932
       board: 8528553128873044056
       sinklet2: 2138586957901456501
+      mixbowl: -4918776579195798543
+      fridge1: 5482427156145881213
+      circle1: -2468128796637435866
+      hair_side: -1653541142363019882
+      mixhand2: 7140786075311017055
+      arrow1: 8751792488122390196
+      panlet2: -730942957819197246
+      panlet3: -7963188162635607598
+      coffee3: -7447176900822077712
+      table1: 1296125551425991600
+      arrow6: -3915065105826899531
+      fried_egg: -8504388847889761321
+      shoes: 3732392828043325282
+      chef_side: -7603514049183062745
+      chair2: -5587063009354488333
+      salad: -6281440357103659846
+      sinklet1: -6787469346435372944
+      coffee: 2963122562848701620
+      pan3: 2636452018979642848
+      pan1: 8482762638095593011
+      circle6: 4379695808090203063
+      cabb_irl: -7208782583072337106
+      table2: -3551773745164438710
+      egg_irl: 7802283683096721082
+      panlet1: -5688593791525575297
+      arrow4: 8905289455074180067
+      circle5: 6702539940831606494
+      egg: -2109547878569501114
+      veggie_box: 8644135109525292980
+      dish: -5947205325045975888
+      coffee1: 6371470626893398652
+      hair_front: -7802330158825546334
+      circle2: -929303585636652627
+      milk_irl: -5575111780591702895
       chef_front: 5430749510736010992
+      body: 233227185538982242
       pan: 8851164439876902450
-      arrow5: -4963279327606943534
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

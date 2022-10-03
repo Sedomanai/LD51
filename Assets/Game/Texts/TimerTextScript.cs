@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class TimerTextScript : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class TimerTextScript : MonoBehaviour
 
     [SerializeField]
     bool _startAtAwake = false;
+
+    [SerializeField]
+    InputActionReference _debug;
 
     public UnityEvent OnTimeHit;
 
@@ -35,6 +39,11 @@ public class TimerTextScript : MonoBehaviour
                 OnTimeHit.Invoke();
             }
             ConvertTimeToText();
+
+            if (_debug.action.triggered) {
+                ResetTime();
+                OnTimeHit.Invoke();
+            }
         }
     }
 

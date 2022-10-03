@@ -24,18 +24,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Character",
+                    "name": "Debug",
                     "type": "Button",
-                    "id": "eaebe3a6-34d7-4607-83cd-7ddccbe07ab0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Kitchen",
-                    "type": "Button",
-                    "id": "e3b47d0f-85f4-46b7-9482-9a5331e89ceb",
+                    "id": "de9c16ac-c77a-4808-bdfc-af38cf5391f8",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -67,23 +58,12 @@
                 },
                 {
                     "name": "",
-                    "id": "407a894a-fe12-4ac1-b2a8-2d7190926613",
-                    "path": "<Mouse>/leftButton",
+                    "id": "88fe3f3e-5834-4b61-b001-6b64ec02ebe4",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Character",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3ed6e4e6-a644-4a5e-90ef-1a02b0e4a965",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Kitchen",
+                    "action": "Debug",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -2206,9 +2206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 659650672}
   - component: {fileID: 659650675}
-  - component: {fileID: 659650674}
-  - component: {fileID: 659650673}
-  m_Layer: 22
+  m_Layer: 0
   m_Name: Gas Stove (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2230,44 +2228,6 @@ Transform:
   m_Father: {fileID: 1421888125}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &659650673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 659650671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af665ac65e89814383648a0fc29a573, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!61 &659650674
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 659650671}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0017981529, y: 0.47180912}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5555556, y: -0.083333336}
-    oldSize: {x: 1.125, y: 0.75}
-    newSize: {x: 1.125, y: 0.75}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.9964037, y: 0.57618994}
-  m_EdgeRadius: 0
 --- !u!212 &659650675
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9556,7 +9516,6 @@ MonoBehaviour:
   _input: {fileID: -944628639613478452, guid: b65fb76157349da4fb582b66afc0c966, type: 3}
   _selectAction: {fileID: 3349925072771558792, guid: b65fb76157349da4fb582b66afc0c966, type: 3}
   _state: 0
-  testClip: {fileID: 8300000, guid: a3323751aa98d5a4fb41417e1959bcfe, type: 3}
   _timer: {fileID: 2029993964}
 --- !u!114 &1876534351
 MonoBehaviour:

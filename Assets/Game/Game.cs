@@ -146,7 +146,7 @@ namespace Elang
 
         void RestartClick() {
             if (_state == State.Finished) {
-                if (_trySelect) {
+                if (Mouse.current.rightButton.wasPressedThisFrame) {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
             }
